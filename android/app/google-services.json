@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "390469911071",
+    "project_id": "youthcare-398ee",
+    "storage_bucket": "youthcare-398ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390469911071:android:5e58bbb14db8162bcfcb2a",
+        "android_client_info": {
+          "package_name": "com.example.flutter_calismalari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390469911071-2m96a30dvt9kjh8evejktl560le417vf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgeBe73-OOfHrudKMa_USiQ2u7coJzxps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390469911071-2m96a30dvt9kjh8evejktl560le417vf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
