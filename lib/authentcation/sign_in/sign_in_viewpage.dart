@@ -141,7 +141,6 @@ class SignIn extends GetWidget<sign_in_controller> {
                 ),
                 SizedBox(height: 20,),
                 CustomButton(text: 'Login', OnPress: (){
-                  print('hellooooooooooooooooooooooooooooooooo ${emailcontroller.text.trim()} andhlpooooooooooooo ${passwordcontroller.text.trim()}');
 
                   _formKey.currentState!.save();
                   if(_formKey.currentState!.validate()){
