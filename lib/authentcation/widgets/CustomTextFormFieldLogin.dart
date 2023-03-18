@@ -27,7 +27,7 @@ class custom_textformfield extends StatelessWidget {
       padding: const EdgeInsets.only(right: 25, left: 25),
       child: TextFormField(
         style: TextStyle(
-          color: Colors.white.withOpacity(0.7),
+          color: Colors.white.withOpacity(0.9),
         ),
         decoration: InputDecoration(
           contentPadding:
@@ -36,7 +36,7 @@ class custom_textformfield extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
                 width: 1,
-                color: Colors.red,
+                color: Colors.red.withOpacity(0.8),
               )),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -54,7 +54,7 @@ class custom_textformfield extends StatelessWidget {
           fillColor: Colors.white.withOpacity(0.3),
           prefixIcon: Icon(
             icon,
-            color: Colors.black,
+            color: Colors.white.withOpacity(0.5),
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.only(

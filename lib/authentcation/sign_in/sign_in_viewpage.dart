@@ -49,7 +49,7 @@ class SignIn extends GetWidget<sign_in_controller> {
       ),*/
       body: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+         // borderRadius: BorderRadius.circular(60),
         //  color: Colors.grey.shade200,
 
           gradient: LinearGradient(colors: [
@@ -90,11 +90,14 @@ class SignIn extends GetWidget<sign_in_controller> {
                   // Default: Offset(2, 2)
                   sigma: 4, // Default: 2
                 ),
-                Text('Enter Your Email',
+                Text('Welcome back',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold)),
+                        color: Colors.white.withOpacity(0.9),
+                        fontSize: 29,
+                        fontWeight: FontWeight.bold,
+                    ),
+                ),
+
                 SizedBox(
                   height: 30,
                 ),
@@ -151,7 +154,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                     TextButton(
                       onPressed: () {},
                       child: Text("forget password?",
-                          style: TextStyle(color: Colors.white)),
+                          style: TextStyle(color: Colors.white.withOpacity(0.7))),
                     )
                   ],
                 ),
@@ -184,7 +187,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                     TextButton(
                       onPressed: () {},
                       child: Text('Sign Up',
-                          style: TextStyle(color: Colors.white)),
+                          style: TextStyle(color: Colors.white.withOpacity(0.7))),
                     )
                   ],
                 )

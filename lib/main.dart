@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: primarycolor,
+        fontFamily: 'Roboto',
         //scaffoldBackgroundColor: GradientBackground,
 
       ),
