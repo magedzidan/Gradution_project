@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:youth_care_application/authentcation/sign_in/sign_in_viewpage.dart';
 import 'package:youth_care_application/constant/constance.dart';
 import 'package:youth_care_application/helper/binding.dart';
+import 'package:youth_care_application/themes/main_theme.dart';
 import 'firebase_options.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: primarycolor,
-        //scaffoldBackgroundColor: primarycolor,
+        //scaffoldBackgroundColor: GradientBackground,
 
       ),
       home:SignIn(),

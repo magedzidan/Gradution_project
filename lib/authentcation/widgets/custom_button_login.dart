@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
         onPressed: OnPress,
         //minWidth: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height/16,
-        color: primarycolor,
+        color: Color(0xFF179d9e).withAlpha(210),
         child: CustomText(
           text: text,
           alignment: Alignment.center,

@@ -27,7 +27,7 @@ class custom_textformfield extends StatelessWidget {
       padding: const EdgeInsets.only(right: 25, left: 25),
       child: TextFormField(
         style: TextStyle(
-          color: Colors.black.withOpacity(0.7),
+          color: Colors.white.withOpacity(0.7),
         ),
         decoration: InputDecoration(
           contentPadding:
@@ -45,7 +45,7 @@ class custom_textformfield extends StatelessWidget {
                 color: Colors.blue,
               )),
           hintText: hintText,
-          hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
+          hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
           labelText: labelText,
           labelStyle: TextStyle(
             color: Colors.black.withOpacity(0.7),

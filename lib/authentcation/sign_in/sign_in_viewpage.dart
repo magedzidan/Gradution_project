@@ -48,34 +48,26 @@ class SignIn extends GetWidget<sign_in_controller> {
         ),
       ),*/
       body: Container(
-        /*      decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors:[
-              Color(0xFF14436d),
-              Color(0xFF0f3a68),
-          //    secondrycolor,
-              //Color(0xFF387b87),
-              Color(0xFF419aaa),
-              Color(0xFF6297bd),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+        //  color: Colors.grey.shade200,
 
-
-            ],
-                stops: [
-                  0.2,
-                  0.2,
-                  0.1,
-                  0.2,
-                ],
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft
-          ),
-        ),*/
+          gradient: LinearGradient(colors: [
+            gradientColorA,
+            gradientColorB,
+          ], /*stops: [
+              0.2,
+              0.2,
+              0.1,
+              0.2,
+            ],*/ begin: Alignment.topCenter, end: Alignment.bottomLeft),
+        ),
         height: MediaQuery.of(context).size.height / 1.02,
         width: MediaQuery.of(context).size.height / 2,
-        decoration: BoxDecoration(
+       /* decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(60),
           color: Colors.grey.shade200,
-        ),
+        ),*/
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
@@ -100,7 +92,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                 ),
                 Text('Enter Your Email',
                     style: TextStyle(
-                        color: primarycolor,
+                        color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold)),
                 SizedBox(
@@ -112,7 +104,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                     emailcontroller.text=value!;
                   },
                   validator: (value){
-                    String patttern = r'^([\d{9}\.]+@(o6u+\.)+(edu+\.)+(eg))$';
+                    String patttern = r'^([\d{9}\.]+@(o6u\.)+(edu\.)+(eg))$';
                     RegExp regExp = new RegExp(patttern);
                     if(value==null || regExp.hasMatch(value)==false){
                       return("Error Enter a valid email");
@@ -159,7 +151,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                     TextButton(
                       onPressed: () {},
                       child: Text("forget password?",
-                          style: TextStyle(color: primarycolor)),
+                          style: TextStyle(color: Colors.white)),
                     )
                   ],
                 ),
@@ -168,16 +160,16 @@ class SignIn extends GetWidget<sign_in_controller> {
                     child: new Container(
                         margin: const EdgeInsets.only(left: 35.0, right: 20.0),
                         child: Divider(
-                          color: Colors.black,
+                          color: Colors.white,
                           height: 36,
                         )),
                   ),
-                  Text("OR"),
+                  Text("OR",style: TextStyle(color: Colors.white),),
                   Expanded(
                     child: new Container(
                         margin: const EdgeInsets.only(left: 20.0, right: 35.0),
                         child: Divider(
-                          color: Colors.black,
+                          color: Colors.white,
                           height: 36,
                         )),
                   ),
@@ -188,11 +180,11 @@ class SignIn extends GetWidget<sign_in_controller> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Don’t have an account yet?'),
+                    Text('Don’t have an account yet?',style: TextStyle(color: Colors.white),),
                     TextButton(
                       onPressed: () {},
                       child: Text('Sign Up',
-                          style: TextStyle(color: primarycolor)),
+                          style: TextStyle(color: Colors.white)),
                     )
                   ],
                 )
