@@ -39,8 +39,8 @@ class eventsView extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               color: Colors.white,
             ),
-            child: Center(
-              child: Text('HELLO'),
+            child: Center(             //your code goes here
+              child: Text('Events'),
             ),
           ),
         ),

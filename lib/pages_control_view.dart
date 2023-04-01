@@ -46,7 +46,7 @@ class ControlView extends GetWidget<sign_in_controller> {
                 padding: EdgeInsets.only(top: 20),
                 child: Text("Books"),
               ),*/
-              icon: Icon(Icons.book),
+              icon: Icon(Icons.bookmark_add),
               label: ''),
 
           BottomNavigationBarItem(
