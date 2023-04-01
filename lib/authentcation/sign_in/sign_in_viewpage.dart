@@ -7,6 +7,7 @@ import 'package:youth_care_application/constant/constance.dart';
 import 'package:sizer/sizer.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 import 'package:dashed_line/dashed_line.dart';
+import 'package:youth_care_application/events/events_view.dart';
 
 class SignIn extends GetWidget<sign_in_controller> {
   final GlobalKey<FormState> _formKey = GlobalKey();
@@ -90,10 +91,10 @@ class SignIn extends GetWidget<sign_in_controller> {
                   // Default: Offset(2, 2)
                   sigma: 4, // Default: 2
                 ),
-                Text('Welcome back',
+                Text('Welcome',
                     style: TextStyle(
                         color: Colors.white.withOpacity(0.9),
-                        fontSize: 29,
+                        fontSize: 34,
                         fontWeight: FontWeight.bold,
                     ),
                 ),
@@ -140,6 +141,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                   _formKey.currentState!.save();
                   if(_formKey.currentState!.validate()){
                     controller.signInWithEmailAndPassword(emailcontroller.text.trim(),passwordcontroller.text.trim());
+                    Get.offAll(()=>eventsView());
                   }
                 }),
                 SizedBox(

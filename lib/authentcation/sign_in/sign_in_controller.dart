@@ -12,7 +12,7 @@ class sign_in_controller extends GetxController {
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    user?.bindStream(_auth.authStateChanges());
+    _user?.bindStream(_auth.authStateChanges());
   }
 
   @override

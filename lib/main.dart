@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:youth_care_application/authentcation/sign_in/sign_in_viewpage.dart';
 import 'package:youth_care_application/constant/constance.dart';
+import 'package:youth_care_application/pages_control_view.dart';
 import 'package:youth_care_application/helper/binding.dart';
 import 'package:youth_care_application/themes/main_theme.dart';
 import 'firebase_options.dart';
@@ -25,10 +26,12 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primaryColor: primarycolor,
         fontFamily: 'Roboto',
+          //navigationBarTheme: NavigationBarThemeData(backgroundColor: Colors.black)
+
         //scaffoldBackgroundColor: GradientBackground,
 
       ),
-      home:SignIn(),
+      home:ControlView(),
       /*routes:{
           "addnotes":(context) => addnotes()
         },*/
