@@ -38,7 +38,7 @@ class ControlView extends GetWidget<sign_in_controller> {
                 padding: EdgeInsets.only(top: 20),
                 child: Text("Events"),
               ),*/
-              icon: Icon(Icons.event),
+              icon: Icon(Icons.event,size: 29,),
               label: ''),
 
           BottomNavigationBarItem(
@@ -46,7 +46,7 @@ class ControlView extends GetWidget<sign_in_controller> {
                 padding: EdgeInsets.only(top: 20),
                 child: Text("Books"),
               ),*/
-              icon: Icon(Icons.bookmark_add),
+              icon: Icon(Icons.bookmark_add,size: 29,),
               label: ''),
 
           BottomNavigationBarItem(
@@ -54,7 +54,7 @@ class ControlView extends GetWidget<sign_in_controller> {
                 padding: EdgeInsets.only(top: 20),
                 child: Text("Tournament"),
               ),*/
-              icon: Icon(Icons.emoji_events_outlined),
+              icon: Icon(Icons.emoji_events_outlined,size: 29,),
               label: ''),
 
           BottomNavigationBarItem(
@@ -62,7 +62,7 @@ class ControlView extends GetWidget<sign_in_controller> {
                 padding: EdgeInsets.only(top: 20),
                 child: Text("Profile"),
               ),*/
-              icon: Icon(Icons.person_outline_outlined),
+              icon: Icon(Icons.person,size: 29,),
               label: ''),
         ],
         currentIndex: controller.navigatorvalue,
