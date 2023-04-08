@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:youth_care_application/authentcation/sign_in/sign_in_controller.dart';
+import 'package:youth_care_application/authentcation/sign_up/sign_up_firstpage.dart';
 import 'package:youth_care_application/authentcation/widgets/CustomTextFormFieldLogin.dart';
 import 'package:youth_care_application/authentcation/widgets/custom_button_login.dart';
 import 'package:youth_care_application/constant/constance.dart';
@@ -8,6 +9,8 @@ import 'package:sizer/sizer.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 import 'package:dashed_line/dashed_line.dart';
 import 'package:youth_care_application/events/events_view.dart';
+
+import '../../pages_control_view.dart';
 
 class SignIn extends GetWidget<sign_in_controller> {
   final GlobalKey<FormState> _formKey = GlobalKey();
@@ -94,7 +97,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                 Text('Welcome',
                     style: TextStyle(
                         color: Colors.white.withOpacity(0.9),
-                        fontSize: 34,
+                        fontSize: 48,
                         fontWeight: FontWeight.bold,
                     ),
                 ),
@@ -141,7 +144,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                   _formKey.currentState!.save();
                   if(_formKey.currentState!.validate()){
                     controller.signInWithEmailAndPassword(emailcontroller.text.trim(),passwordcontroller.text.trim());
-                    Get.offAll(()=>eventsView());
+                    Get.offAll(()=>ControlView());
                   }
                 }),
                 SizedBox(
@@ -180,18 +183,23 @@ class SignIn extends GetWidget<sign_in_controller> {
                   ),
                 ]),
                 SizedBox(
-                  height: 20,
+                  height: 0,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Don’t have an account yet?',style: TextStyle(color: Colors.white),),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text('Sign Up',
-                          style: TextStyle(color: Colors.white.withOpacity(0.7))),
-                    )
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Don’t have an account yet?',style: TextStyle(color: Colors.white),),
+                      TextButton(
+                        onPressed: () {
+                          Get.to(()=>SignupPage());
+                        },
+                        child: Text('Sign Up',
+                            style: TextStyle(color: Colors.white.withOpacity(0.7))),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),

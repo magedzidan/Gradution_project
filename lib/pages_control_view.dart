@@ -11,66 +11,85 @@ class ControlView extends GetWidget<sign_in_controller> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      return (Get
-          .find<sign_in_controller>()
-          .user == null)
+      return (Get.find<sign_in_controller>().user == null)
           ? SignIn()
           : GetBuilder<ScreenControlIndcator>(
-          builder: (controller)=>Scaffold(
-            bottomNavigationBar: _BottomNavigationBar(),
-            body: controller.current_screen,
-          ),
-      );
+              builder: (controller) => Scaffold(
+                bottomNavigationBar: _BottomNavigationBar(),
+                body: controller.current_screen,
+              ),
+            );
     });
   }
 
   _BottomNavigationBar() {
     return GetBuilder<ScreenControlIndcator>(
-      builder: (controller)=>BottomNavigationBar(
-        elevation: 1,
-        type: BottomNavigationBarType.fixed, // Fixed
-        backgroundColor: gradientColorB, // <-- This works for fixed
-        selectedItemColor: primarycolor,
-        unselectedItemColor: Colors.grey.shade400,
-        items: const [
-          BottomNavigationBarItem(
-           /*   activeIcon: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Text("Events"),
-              ),*/
-              icon: Icon(Icons.event,size: 29,),
-              label: ''),
+        builder: (controller) => Container(
+          color: gradientColorA,
+          /*decoration: const BoxDecoration(
+            // borderRadius: BorderRadius.circular(60),
+            //  color: Colors.grey.shade200,
 
-          BottomNavigationBarItem(
-     /*         activeIcon: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Text("Books"),
-              ),*/
-              icon: Icon(Icons.bookmark_add,size: 29,),
-              label: ''),
+            gradient: LinearGradient(
+                colors: [
+                  gradientColorA,
+                  gradientColorB,
+                ],
+                stops: [
+                0.2,
+                0.7
+              ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight),
 
-          BottomNavigationBarItem(
-/*              activeIcon: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Text("Tournament"),
-              ),*/
-              icon: Icon(Icons.emoji_events_outlined,size: 29,),
-              label: ''),
+          ),*/
+          child: ClipRRect(
 
-          BottomNavigationBarItem(
-  /*            activeIcon: Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Text("Profile"),
-              ),*/
-              icon: Icon(Icons.person,size: 29,),
-              label: ''),
-        ],
-        currentIndex: controller.navigatorvalue,
-        onTap: (index) {
-          controller.ChangeScreen(index);
-        },
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular((20)),
+                    bottomLeft: Radius.circular((20)),
+                 ),
+                child: BottomNavigationBar(
 
-      )
-    );
+                  elevation: 0.0,
+                  type: BottomNavigationBarType.fixed,
+                  // Fixed
+                  backgroundColor:  Colors.transparent,
+                  // <-- This works for fixed
+                  selectedItemColor: primarycolor,
+                  unselectedItemColor: Colors.grey.shade400,
+                  items: const [
+                    BottomNavigationBarItem(
+                        icon: Icon(
+                          Icons.event,
+                          size: 27,
+                        ),
+                        label: ''),
+                    BottomNavigationBarItem(
+                        icon: Icon(
+                          Icons.bookmark_add,
+                          size: 27,
+                        ),
+                        label: ''),
+                    BottomNavigationBarItem(
+                        icon: Icon(
+                          Icons.emoji_events_outlined,
+                          size: 27,
+                        ),
+                        label: ''),
+                    BottomNavigationBarItem(
+                        icon: Icon(
+                          Icons.person,
+                          size: 27,
+                        ),
+                        label: ''),
+                  ],
+                  currentIndex: controller.navigatorvalue,
+                  onTap: (index) {
+                    controller.ChangeScreen(index);
+                  },
+                ),
+              ),
+        ));
   }
 }

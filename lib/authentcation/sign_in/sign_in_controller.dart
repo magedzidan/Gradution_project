@@ -43,4 +43,8 @@ class sign_in_controller extends GetxController {
           snackPosition: SnackPosition.BOTTOM);
     }
   }
+
+  void signout() async{
+    await _auth.signOut();
+  }
 }

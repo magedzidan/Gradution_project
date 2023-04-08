@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:youth_care_application/authentcation/sign_in/sign_in_controller.dart';
+import 'package:youth_care_application/authentcation/sign_in/sign_in_viewpage.dart';
+import 'package:youth_care_application/authentcation/widgets/custom_button_login.dart';
 import 'package:youth_care_application/constant/constance.dart';
+import 'package:youth_care_application/profile/profile_controller.dart';
 import 'package:youth_care_application/screen_control_indcator.dart';
-class ProfileView extends StatelessWidget {
+
+class ProfileView extends GetWidget<profile_controller> {
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +44,15 @@ class ProfileView extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               color: Colors.white,
             ),
-            child: Center(      //your code goes here
-              child: Text('profile'),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 120,right: 120,top:250,bottom: 250),
+              child: Center(      //your code goes here
+                child: CustomButton(text: 'sign out',OnPress: (){
+                  Get.offAll(SignIn());
+
+
+                },),
+              ),
             ),
           ),
         ),
