@@ -31,10 +31,9 @@ class DuplicatedEventItem2 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 5),
                   height: MediaQuery.of(context).size.height / 8,
                   width: 160,
-                  child: Image.network(
-                    'https://scontent.fcai19-5.fna.fbcdn.net/v/t39.30808-6/307180680_455904469905310_7052831461960350522_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0NvSN_Ii440AX_5_pyI&_nc_ht=scontent.fcai19-5.fna&oh=00_AfAWTBJZHzoPN_TQPoZrsB47Dlh3vwSK6pcpGSXX0xa5LA&oe=643149FE',
+                  child: Image.asset('assest/o6uuu.jpg',
                     fit: BoxFit.cover,
-                  ),
+                  )
                 )),
             SizedBox(
               width: 10,

@@ -27,93 +27,98 @@ class eventsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: const BoxDecoration(
-          // borderRadius: BorderRadius.circular(60),
-          //  color: Colors.grey.shade200,
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.transparent,
+        /* leading:
+        ClipRRect(
+          clipBehavior: Clip.none,
+          child: Transform.translate(
 
-          gradient: LinearGradient(
-              colors: [
-                gradientColorA,
-                gradientColorB,
-                gradientColorA,
-                gradientColorB,
-              ],
-              stops: [
-                0.2,
-                0.3,
-                0.5,
-                0.4,
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight),
-        ),
-        child: Scaffold(
-          appBar: AppBar(
-            elevation: 0.0,
-            backgroundColor: Colors.transparent,
-            /* leading:
-            ClipRRect(
-              clipBehavior: Clip.none,
-              child: Transform.translate(
+            offset: const Offset(15, 10),
 
-                offset: const Offset(15, 10),
-
-                child: CircleAvatar(
-                  radius: 80,
-                  backgroundImage: AssetImage('assest/maged.jpg'),
-                ),
-              ),
-            ),*/
-            title: Padding(
-              padding: const EdgeInsets.only(left: 6, top: 30),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 14,
-                    backgroundImage: NetworkImage('https://scontent.fcai19-5.fna.fbcdn.net/v/t39.30808-6/307180680_455904469905310_7052831461960350522_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0NvSN_Ii440AX_5_pyI&_nc_ht=scontent.fcai19-5.fna&oh=00_AfAWTBJZHzoPN_TQPoZrsB47Dlh3vwSK6pcpGSXX0xa5LA&oe=643149FE'),
-                  ),
-                  SizedBox(width: 10,),
-                  Text(
-
-                    'October 6 Univeristy',
-                    style: GoogleFonts.notoSans(
-                      textStyle: TextStyle(
-                          shadows: [BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 15.0, // soften the shadow
-                            spreadRadius: 2.0,
-                          )],
-                          color: Colors.grey[200],
-                          letterSpacing: .1,
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ],
-              ),
+            child: CircleAvatar(
+              radius: 80,
+              backgroundImage: AssetImage('assest/maged.jpg'),
             ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20, top: 30),
-                child: Icon(
-                  Icons.notifications_active,
-                  color: Colors.grey[200],
+          ),
+        ),*/
+        title: Padding(
+          padding: const EdgeInsets.only(left: 6, top: 30),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 15,
+                backgroundImage:Image.asset('assest/o6u.jpg',fit: BoxFit.fill,).image,
+              ),
+              SizedBox(width: 10,),
+              Text(
+                'October 6 Univeristy',
+                style: GoogleFonts.notoSans(
+                  textStyle: TextStyle(
+                      shadows: [BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 15.0, // soften the shadow
+                        spreadRadius: 2.0,
+                      )],
+                      color: Colors.grey[200],
+                      letterSpacing: .1,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold),
                 ),
-              )
+              ),
             ],
           ),
-          extendBodyBehindAppBar: true,
-          extendBody: true,
-          backgroundColor: Colors.transparent,
-          body: SingleChildScrollView(
-            child: Container(
-              margin: EdgeInsets.only(top: 260),
+        ),
+        /*actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20, top: 30),
+            child: Icon(
+              Icons.notifications_active,
               color: Colors.grey[200],
-              height: MediaQuery.of(context).size.height / 1.6,
-              width: double.infinity,
-              child: SingleChildScrollView(
-                clipBehavior: Clip.none,
+            ),
+          )
+        ],*/
+      ),
+      extendBodyBehindAppBar: true,
+      extendBody: true,
+      backgroundColor: Colors.transparent,
+      body:  SingleChildScrollView(
+        child: Stack(
+
+          children: [
+            Container(
+
+              height: MediaQuery.of(context).size.height/2.8,
+              decoration: const BoxDecoration(
+
+                // borderRadius: BorderRadius.circular(60),
+                //  color: Colors.grey.shade200,
+
+                gradient: LinearGradient(
+                    colors: [
+                      gradientColorA,
+                      gradientColorB,
+                      gradientColorA,
+                      gradientColorB,
+                    ],
+                    stops: [
+                      0.2,
+                      0.3,
+                      0.5,
+                      0.4,
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight),
+              ),
+            ),
+
+            Container(
+                margin: EdgeInsets.only(top: 260),
+                color: Colors.grey[200],
+                height: MediaQuery.of(context).size.height / 1.6,
+                width: double.infinity,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -180,52 +185,64 @@ class eventsView extends StatelessWidget {
                         },
                       ),
                     ),
+
                     SizedBox(
-                      height: 15,
+                      height: 9,
                     ),
+
                     Transform.translate(
                       offset: const Offset(0, -140),
                       child: SmoothPageIndicator(
-                          controller: controller,
-                          count: _itemCount,
-                          effect: ExpandingDotsEffect(
-                              spacing: 8.0,
-                              radius: 3.0,
-                              dotWidth: 18.0,
-                              dotHeight: 10.0,
-                              paintStyle: PaintingStyle.fill,
-                              strokeWidth: 1.5,
-                              dotColor: Colors.grey,
-                              activeDotColor: gradientColorA)),
+                      controller: controller,
+                      count: _itemCount,
+                      effect: ExpandingDotsEffect(
+                          spacing: 8.0,
+                          radius: 3.0,
+                          dotWidth: 18.0,
+                          dotHeight: 10.0,
+                          paintStyle: PaintingStyle.fill,
+                          strokeWidth: 1.5,
+                          dotColor: Colors.grey,
+                          activeDotColor: gradientColorA)),
                     ),
                     Transform.translate(
                       offset: const Offset(-50, -120),
                       child: Text(
-                        'Our Latest Events',
-                        style: GoogleFonts.notoSans(
-                          textStyle: TextStyle(
-                              color: secondrycolor,
-                              letterSpacing: .1,
-                              fontSize: 29,
-                              fontWeight: FontWeight.w900),
-                        ),
+                    'Our Latest Events',
+                    style: GoogleFonts.notoSans(
+                      textStyle: TextStyle(
+                          color: secondrycolor,
+                          letterSpacing: .1,
+                          fontSize: 29,
+                          fontWeight: FontWeight.w900),
+                    ),
                       ),
                     ),
-                    Column(
-                      children: [
-                        EventItem(),
-                        SizedBox(height: 7,),
-                        DuplicatedEventItem(),
-                        SizedBox(height: 7,),
-                        DuplicatedEventItem2(),
-
-                      ],
-                    )
                   ],
                 ),
-              ),
             ),
-          ),
-        ));
+
+                    SingleChildScrollView(
+
+                      child: Column(
+                     mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(height: 550,),
+                      EventItem(),
+                      SizedBox(height: 7,),
+                      DuplicatedEventItem(),
+                      SizedBox(height: 7,),
+                      DuplicatedEventItem2(),
+                      SizedBox(height: 7,),
+                      DuplicatedEventItem2(),                        SizedBox(height: 7,),
+                      DuplicatedEventItem2(),                        SizedBox(height: 7,),
+                      DuplicatedEventItem2(),
+                    ],
+                      ),
+                    ),
+          ],
+        ),
+      ),
+    );
   }
 }

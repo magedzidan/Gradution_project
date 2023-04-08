@@ -31,9 +31,8 @@ class EventItem extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 5),
                   height: MediaQuery.of(context).size.height / 8,
                   width: 160,
-                  child: Image.network(
-                    'https://scontent.fcai19-5.fna.fbcdn.net/v/t39.30808-6/336872916_1515929032229733_4482093524858898430_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=2I9cLwugSv8AX8uTACU&_nc_ht=scontent.fcai19-5.fna&oh=00_AfAiq5ZDZgUFAdv9Zr3HC9_iXb4t0y9wAVb6KB6O6ZGiGQ&oe=6430B81B',
-                    fit: BoxFit.fitHeight,
+                  child: Image.asset('assest/o6uuu.jpg',
+                    fit: BoxFit.cover,
                   ),
                 )),
             SizedBox(
