@@ -2,10 +2,10 @@ import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
-class Article {
-  Article({
+class EventsModel {
+  EventsModel({
     required this.title,
-    this.description,
+    required this.description,
     this.urlToImage,
     required this.publishedAt,
   });
@@ -15,7 +15,7 @@ class Article {
   String? urlToImage;
   DateTime publishedAt;
 
-  factory Article.fromJson(Map<String, dynamic> json) => Article(
+  factory EventsModel.fromJson(Map<String, dynamic> json) => EventsModel(
 
     title: json["title"],
     description: json["description"],

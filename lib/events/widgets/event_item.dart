@@ -46,7 +46,7 @@ class EventItem extends StatelessWidget {
                   'Thu,Feb 13 at 06:30 PM',
                   style: TextStyle(
                       color: secondrycolor,
-                      fontSize: 17,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5),
@@ -57,10 +57,10 @@ class EventItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.notoSans(
                     textStyle: TextStyle(
-                        fontSize: 15,
+                        fontSize: 14,
                         letterSpacing: 0.3,
                         fontWeight: FontWeight.w700,
-                        color: Colors.grey[600]),
+                        color: Colors.grey[700]),
                   ),
                 )
               ],
