@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jiffy/jiffy.dart';
 import 'package:youth_care_application/constant/constance.dart';
 import 'package:youth_care_application/screen_control_indcator.dart';
 class BookingView extends StatelessWidget {
 
+
+
   @override
+
   Widget build(BuildContext context) {
     return
       Container(
@@ -41,7 +45,13 @@ class BookingView extends StatelessWidget {
                 color: Colors.white,
               ),
               child: Center(       //your code goes here
-                child: Text('Booking'),
+                child:MaterialButton(
+                  color: Colors.red,
+                  onPressed: (){
+                    print('firstpart+second_part+thirdpart');
+                  },
+                  child: Text('click me'),
+                ),
               ),
             ),
           ),

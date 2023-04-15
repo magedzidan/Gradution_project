@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:youth_care_application/constant/constance.dart';
+import 'package:youth_care_application/events/events_controller.dart';
 import 'package:youth_care_application/events/widgets/Another_duplicate.dart';
 import 'package:youth_care_application/events/widgets/SearchBox.dart';
 import 'package:youth_care_application/events/widgets/duplicated_event_item.dart';
@@ -24,10 +25,8 @@ class _AnimatedAppBarState extends State<eventsView>
   var animation;
   var controller;
 
-
-
   final controller1 =
-  PageController(viewportFraction: 0.9, keepPage: false, initialPage: 2);
+      PageController(viewportFraction: 0.9, keepPage: false, initialPage: 2);
   final _itemCount = 5;
   final colors = const [
     Colors.red,
@@ -40,9 +39,11 @@ class _AnimatedAppBarState extends State<eventsView>
 
   final trophyimage =
       'https://scontent.fcai19-5.fna.fbcdn.net/v/t39.30808-6/340855265_901212481106851_6082821086337358666_n.jpg?stp=dst-jpg_s1080x2048&_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=WKHLollLlzsAX8Kqw1Q&_nc_ht=scontent.fcai19-5.fna&oh=00_AfB76UlcV0iTBxGs7sxnxxZ8RXaMzCKt11jT1s7F_YGz4w&oe=643D3EA2';
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return GetBuilder<EventsController>(builder: (controllere)=>controllere.loading.value?Center(child: CircularProgressIndicator()):
+    SafeArea(
       child: Scaffold(
         body: Stack(
           children: [
@@ -88,7 +89,7 @@ class _AnimatedAppBarState extends State<eventsView>
                     automaticallyImplyLeading: false,
                     titleSpacing: 0.0,
                     toolbarHeight: (innnerBoxIsScrolled != null &&
-                        innnerBoxIsScrolled == true)
+                            innnerBoxIsScrolled == true)
                         ? 80.0
                         : 124.0,
                     centerTitle: false,
@@ -102,15 +103,12 @@ class _AnimatedAppBarState extends State<eventsView>
                           FadeTransition(
                             opacity: animation,
                             child: Column(
-
                               crossAxisAlignment: CrossAxisAlignment.start,
-
                               children: [
                                 SizedBox(
                                   height: 30.0,
                                 ),
                                 Row(
-
                                   children: const [
                                     SizedBox(
                                       width: 15.0,
@@ -154,7 +152,7 @@ class _AnimatedAppBarState extends State<eventsView>
                                   width: 22.0,
                                 ),
                                 Transform.translate(
-                                  offset: const Offset(0.0, 35.0),
+                                  offset: const Offset(5.0, 40.0),
                                   child: Icon(
                                     Icons.menu,
                                     color: Colors.white,
@@ -203,10 +201,13 @@ class _AnimatedAppBarState extends State<eventsView>
                   return SingleChildScrollView(
                     child: Column(
                       children: [
-                        SizedBox(height: 20,),
-                       /* SearchTextFormField(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        /* SearchTextFormField(),
                         SizedBox(height: 10,),*/
-                        SizedBox( //pagesssss
+                        SizedBox(
+                          //pagesssss
                           height: 240,
                           child: PageView.builder(
                             //   clipBehavior: Clip.none,
@@ -217,13 +218,12 @@ class _AnimatedAppBarState extends State<eventsView>
                                 padding: EdgeInsets.only(
                                     top: 0, bottom: 0, left: 5, right: 5),
                                 child: Stack(
-
-                                  textDirection:TextDirection.rtl ,
+                                  textDirection: TextDirection.rtl,
                                   children: [
                                     Container(
                                         clipBehavior: Clip.hardEdge,
                                         decoration: BoxDecoration(
-                                          /*boxShadow: [
+                                            /*boxShadow: [
                                               BoxShadow(
                                                 color: Colors.grey,
                                                 blurRadius: 10.0, // soften the shadow
@@ -235,10 +235,18 @@ class _AnimatedAppBarState extends State<eventsView>
                                               ),
                                             ],*/
                                             color: primarycolor,
-                                            borderRadius: BorderRadius.circular(10)),
-                                        height: MediaQuery.of(context).size.height / 2.0,
-                                        width: MediaQuery.of(context).size.width / 1.0,
-                                        child:Image.asset('assest/sports5.jpg',fit: BoxFit.fill,)),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                2.0,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                1.0,
+                                        child: Image.asset(
+                                          'assest/sports5.jpg',
+                                          fit: BoxFit.fill,
+                                        )),
                                     /*Container(
                                       margin: EdgeInsets.only(bottom: 12,right: 4),
                                       alignment: Alignment.bottomCenter,
@@ -263,10 +271,11 @@ class _AnimatedAppBarState extends State<eventsView>
                             },
                           ),
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Transform.translate(
                           offset: const Offset(0.0, -25.0),
-
                           child: SmoothPageIndicator(
                               controller: controller1,
                               count: _itemCount,
@@ -277,17 +286,19 @@ class _AnimatedAppBarState extends State<eventsView>
                                   dotHeight: 7.0,
                                   paintStyle: PaintingStyle.fill,
                                   strokeWidth: 1.5,
-                                  dotColor: Colors.white,
+                                  dotColor: Colors.white.withAlpha(220),
                                   activeDotColor: gradientColorA)),
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Row(
-
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(width: 20,),
+                            SizedBox(
+                              width: 20,
+                            ),
                             Container(
-
                               child: Text(
                                 'Events Highlight',
                                 style: GoogleFonts.notoSans(
@@ -299,18 +310,12 @@ class _AnimatedAppBarState extends State<eventsView>
                                 ),
                               ),
                             ),
-
                           ],
                         ),
-                        SizedBox(height: 20,),
-                        ListView.separated(
-                          itemCount: 8,
-                          physics: NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemBuilder: (BuildContext context, int index) {
-                            return EventItem();
-                          }, separatorBuilder: (BuildContext context, int index) { return Divider(height: 2,); },
-                        )
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _ListEvents()
                       ],
                     ),
                   );
@@ -320,6 +325,91 @@ class _AnimatedAppBarState extends State<eventsView>
           ],
         ),
       ),
+    )
     );
+  }
+
+  Widget _ListEvents() {
+    return GetBuilder<EventsController>(
+        builder: (controllere) => ListView.separated(
+              itemCount: controllere.eventsModel.length,
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: (){
+                   /* Get.to(()=>eventDetailsView(
+                      model:controller.eventsModel[index]
+                    ));*/
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 21),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.white24, borderRadius: BorderRadius.circular(20)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              //clipBehavior: Clip.antiAliasWithSaveLayer,
+                              child: Container(
+
+                                margin: EdgeInsets.symmetric(horizontal: 00),
+                                padding: EdgeInsets.only(left: 00),
+                                height: MediaQuery.of(context).size.height / 9.3,
+                                width: 115,
+
+                                child: Image.network(
+                                  controllere.eventsModel[index].urlToImage as String,
+                                  fit: BoxFit.fill,
+                                ),
+                              )),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Flexible(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  controllere.eventsModel[index].date as String,
+                                  style: TextStyle(
+                                      color: secondrycolor,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  controllere.eventsModel[index].title ,
+                                  maxLines: 2,
+                                  softWrap: false,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: GoogleFonts.notoSans(
+                                    textStyle: TextStyle(
+                                        fontSize: 13,
+                                        letterSpacing: 0.3,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.grey[700]),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return Divider(
+                  height: 15,
+                  color: Colors.transparent,
+                );
+              },
+            ));
   }
 }

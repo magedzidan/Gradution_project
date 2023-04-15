@@ -7,26 +7,27 @@ class EventsModel {
     required this.title,
     required this.description,
     this.urlToImage,
-    required this.publishedAt,
+    required this.date,
   });
 
   String title;
   String? description;
   String? urlToImage;
-  DateTime publishedAt;
+  String? date;
 
   factory EventsModel.fromJson(Map<String, dynamic> json) => EventsModel(
-
     title: json["title"],
     description: json["description"],
     urlToImage: json["urlToImage"],
-    publishedAt: DateTime.parse(json["publishedAt"]),
+   // date: DateTime.parse(json["date"]),
+    date:json['date']
   );
 
   Map<String, dynamic> toJson() => {
     "title": title,
     "description": description,
     "urlToImage": urlToImage,
-    "publishedAt":  DateFormat('EEE d MMM').format(DateTime.now())
+    //"date":  DateFormat('E,MMM MM h:mm a').format(date)//here goes the datedtime u choose)
+    "date":date
   };
 }
