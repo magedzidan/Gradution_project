@@ -1,15 +1,19 @@
 import 'package:animated_appbar/animated_appbar.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:youth_care_application/constant/constance.dart';
 import 'package:youth_care_application/events/events_controller.dart';
+import 'package:youth_care_application/events/eventsdetails.dart';
 import 'package:youth_care_application/events/widgets/Another_duplicate.dart';
 import 'package:youth_care_application/events/widgets/SearchBox.dart';
 import 'package:youth_care_application/events/widgets/duplicated_event_item.dart';
 import 'package:youth_care_application/events/widgets/event_item.dart';
+import 'package:youth_care_application/events/widgets/text_style_event.dart';
+import 'package:youth_care_application/events/widgets/time_page_details.dart';
 import 'package:youth_care_application/screen_control_indcator.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -37,11 +41,68 @@ class _AnimatedAppBarState extends State<eventsView>
     Colors.amber,
   ];
 
+
+
   final trophyimage =
       'https://scontent.fcai19-5.fna.fbcdn.net/v/t39.30808-6/340855265_901212481106851_6082821086337358666_n.jpg?stp=dst-jpg_s1080x2048&_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=WKHLollLlzsAX8Kqw1Q&_nc_ht=scontent.fcai19-5.fna&oh=00_AfB76UlcV0iTBxGs7sxnxxZ8RXaMzCKt11jT1s7F_YGz4w&oe=643D3EA2';
 
   @override
   Widget build(BuildContext context) {
+    final List<String> imgList = [
+      'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
+      'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
+      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
+      'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
+      'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
+      'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
+    ];
+
+    final List<Widget> imageSliders = imgList
+        .map((item) => Container(
+      child: Container(
+        margin: EdgeInsets.all(5.0),
+        child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(5.0)),
+            child: Stack(
+              children: <Widget>[
+/*
+                Image.network(item, fit: BoxFit.cover, width: 1000.0),
+*/
+                Image.asset(
+                    'assest/sports5.jpg', fit: BoxFit.cover, width: 1000.0),
+
+                Positioned(
+                  bottom: 0.0,
+                  left: 0.0,
+                  right: 0.0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color.fromARGB(200, 0, 0, 0),
+                          Color.fromARGB(0, 0, 0, 0)
+                        ],
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                      ),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 20.0),
+                    child: Text(
+                      'No. ${imgList.indexOf(item)} image',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )),
+      ),
+    ))
+        .toList();
     return GetBuilder<EventsController>(builder: (controllere)=>controllere.loading.value?Center(child: CircularProgressIndicator()):
     SafeArea(
       child: Scaffold(
@@ -202,79 +263,30 @@ class _AnimatedAppBarState extends State<eventsView>
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 20,
+                          height: 0,
                         ),
                         /* SearchTextFormField(),
                         SizedBox(height: 10,),*/
                         SizedBox(
                           //pagesssss
-                          height: 240,
-                          child: PageView.builder(
-                            //   clipBehavior: Clip.none,
-                            controller: controller1,
-                            itemCount: _itemCount,
-                            itemBuilder: (_, index) {
-                              return Padding(
-                                padding: EdgeInsets.only(
-                                    top: 0, bottom: 0, left: 5, right: 5),
-                                child: Stack(
-                                  textDirection: TextDirection.rtl,
-                                  children: [
-                                    Container(
-                                        clipBehavior: Clip.hardEdge,
-                                        decoration: BoxDecoration(
-                                            /*boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.grey,
-                                                blurRadius: 10.0, // soften the shadow
-                                                spreadRadius: 2.0, //extend the shadow
-                                                offset: Offset(
-                                                  0.0, // Move to right 5  horizontally
-                                                  5.0,
-                                                ),
-                                              ),
-                                            ],*/
-                                            color: primarycolor,
-                                            borderRadius:
-                                                BorderRadius.circular(10)),
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                2.0,
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                1.0,
-                                        child: Image.asset(
-                                          'assest/sports5.jpg',
-                                          fit: BoxFit.fill,
-                                        )),
-                                    /*Container(
-                                      margin: EdgeInsets.only(bottom: 12,right: 4),
-                                      alignment: Alignment.bottomCenter,
-
-                                      child: Text(
-
-                                        'توجت فرقة الجماعة كلية حسابات ببطولة التنس',
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.right,
-                                        style: GoogleFonts.notoSans(
-                                          textStyle: TextStyle(
-                                              color: Colors.white,
-                                              letterSpacing: .1,
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                    ),*/
-                                  ],
+                          height: 300,
+                          child: Container(
+                              child: CarouselSlider(
+                                options: CarouselOptions(
+                                  aspectRatio: 1.5,
+                                  viewportFraction: 0.9,
+                                  enlargeCenterPage: true,
+                                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                                  initialPage: 2,
+                                  autoPlay: true,
                                 ),
-                              );
-                            },
-                          ),
+                                items: imageSliders,
+                              )),
                         ),
                         SizedBox(
                           height: 10,
                         ),
-                        Transform.translate(
+                      /*  Transform.translate(
                           offset: const Offset(0.0, -25.0),
                           child: SmoothPageIndicator(
                               controller: controller1,
@@ -288,9 +300,9 @@ class _AnimatedAppBarState extends State<eventsView>
                                   strokeWidth: 1.5,
                                   dotColor: Colors.white.withAlpha(220),
                                   activeDotColor: gradientColorA)),
-                        ),
+                        ),*/
                         SizedBox(
-                          height: 10,
+                          height: 00,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -338,16 +350,16 @@ class _AnimatedAppBarState extends State<eventsView>
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
                   onTap: (){
-                   /* Get.to(()=>eventDetailsView(
-                      model:controller.eventsModel[index]
-                    ));*/
+                    Get.to(()=>EventDetailPage(
+                      model:controllere.eventsModel[index]
+                    ));
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 21),
                     child: Container(
                       padding: EdgeInsets.symmetric(vertical: 10),
                       decoration: BoxDecoration(
-                          color: Colors.white24, borderRadius: BorderRadius.circular(20)),
+                          color: Colors.white24, borderRadius: BorderRadius.circular(10)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -374,27 +386,11 @@ class _AnimatedAppBarState extends State<eventsView>
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  controllere.eventsModel[index].date as String,
-                                  style: TextStyle(
-                                      color: secondrycolor,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                                Text(DateTimeUtils.getalldate(controllere.eventsModel[index].date as DateTime ), style: monthStyle),
                                 SizedBox(height: 5),
-                                Text(
-                                  controllere.eventsModel[index].title ,
-                                  maxLines: 2,
-                                  softWrap: false,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: GoogleFonts.notoSans(
-                                    textStyle: TextStyle(
-                                        fontSize: 13,
-                                        letterSpacing: 0.3,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.grey[700]),
-                                  ),
-                                )
+                                Text(controllere.eventsModel[index].title,   maxLines: 2,
+                                    softWrap: false,
+                                    overflow: TextOverflow.ellipsis, style:GoogleFonts.notoSans(textStyle:titleStyle ) )
                               ],
                             ),
                           ),

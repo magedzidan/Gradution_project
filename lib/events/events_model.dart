@@ -13,14 +13,14 @@ class EventsModel {
   String title;
   String? description;
   String? urlToImage;
-  String? date;
+  DateTime? date;
 
   factory EventsModel.fromJson(Map<String, dynamic> json) => EventsModel(
     title: json["title"],
     description: json["description"],
     urlToImage: json["urlToImage"],
-   // date: DateTime.parse(json["date"]),
-    date:json['date']
+    date:  DateTime.parse(json["date"].toDate().toString()),
+    //date:json['date']
   );
 
   Map<String, dynamic> toJson() => {
