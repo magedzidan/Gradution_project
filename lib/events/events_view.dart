@@ -89,7 +89,7 @@ class _AnimatedAppBarState extends State<eventsView>
                     padding: EdgeInsets.symmetric(
                         vertical: 10.0, horizontal: 20.0),
                     child: Text(
-                      'No. ${imgList.indexOf(item)} image',
+                      'o6u campus.${imgList.indexOf(item)}',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,

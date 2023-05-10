@@ -14,16 +14,16 @@ class SignupPage extends StatelessWidget {
   TextEditingController email = TextEditingController();
 
   GlobalKey<FormState> formstate=new GlobalKey<FormState>();
- void signupfirstpage(){
-   var formdate=formstate.currentState;
-   if(formdate!.validate()){
-     formdate.save();
-     Get.to(()=>SignupPage2());
-   }
-   else{
-     print('not');
-   }
- }
+  void signupfirstpage(){
+    var formdate=formstate.currentState;
+    if(formdate!.validate()){
+      formdate.save();
+      Get.to(()=>SignupPage2());
+    }
+    else{
+      print('not');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +72,7 @@ class SignupPage extends StatelessWidget {
             Custom_textformfield(
               controller: username,
               Onsaved: (val){
-                  username.text=val;
+                username.text=val;
               },
               Validtor: (value){
 
@@ -126,7 +126,7 @@ class SignupPage extends StatelessWidget {
               height:30,
             ),
             CustomButton(text: 'Continue', OnPress: (){
-           var  respons= signupfirstpage();
+              var  respons= signupfirstpage();
             }),
             SizedBox(height: 20,),
             Padding(

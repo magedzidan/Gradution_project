@@ -38,9 +38,9 @@ class MyApp extends StatelessWidget{
         //scaffoldBackgroundColor: GradientBackground,
 
       ),
-    /* home: Scaffold(
+     home: Scaffold(
        body: ControlView(),
-     ),    default*/
+     ),
  /*     home: GetBuilder<ScreenControlIndcator>(
         builder: (controller) => Scaffold(
           body: eventsView(),
@@ -48,7 +48,6 @@ class MyApp extends StatelessWidget{
         ),
       ),*/
 
-      home: SignupPage(),
       // home:FirstPage(),
 
       /*routes:{

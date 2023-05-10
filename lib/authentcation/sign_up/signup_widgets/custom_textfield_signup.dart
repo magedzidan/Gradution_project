@@ -52,7 +52,7 @@ class Custom_textformfield extends StatelessWidget {
             borderSide: BorderSide(color: Colors.orange),
           ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(26),
+            borderRadius: BorderRadius.circular(20),
             borderSide: BorderSide(),
           ),
         ),

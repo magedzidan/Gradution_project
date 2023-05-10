@@ -33,7 +33,42 @@ class SignupPage2 extends StatelessWidget {
             ],
           ),
         ),
-        child: ListView(children: [
+        child: ListView(children: [GestureDetector(
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  border: Border.all(
+                      width: 5, color: Colors.white),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 20,
+                      offset: const Offset(5, 5),
+                    ),
+                  ],
+                ),
+                child: Icon(
+                  Icons.person,
+                  color: Colors.grey.shade300,
+                  size: 80.0,
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(80, 80, 0, 0),
+                child: Icon(
+                  Icons.add_circle,
+                  color: Colors.grey.shade900,
+                  size: 25.0,
+                ),
+              ),
+            ],
+          ),
+        ),
           const SizedBox(
             height: 18,
           ),
