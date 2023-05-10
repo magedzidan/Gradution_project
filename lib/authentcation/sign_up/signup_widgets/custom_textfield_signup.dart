@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class Custom_textformfield extends StatelessWidget {
+  var Validtor;
+
+  var Onsaved;
+
   Custom_textformfield(
       {this.hintText,
       this.controller,
       this.icon,
       this.labelText,
-      required this.isPasswordtype});
+      required this.isPasswordtype,
+         this.Validtor,
+        this.Onsaved});
   TextEditingController? controller;
   IconData? icon;
   String? hintText;
@@ -17,9 +23,11 @@ class Custom_textformfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 8,
-        vertical: 10,
+        vertical: 15,
       ),
       child: TextFormField(
+        onSaved: Onsaved,
+        validator: Validtor,
         style: TextStyle(
           color: Colors.white.withOpacity(0.7),
         ),

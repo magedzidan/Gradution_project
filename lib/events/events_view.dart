@@ -368,7 +368,7 @@ class _AnimatedAppBarState extends State<eventsView>
                               //clipBehavior: Clip.antiAliasWithSaveLayer,
                               child: Container(
 
-                                margin: EdgeInsets.symmetric(horizontal: 00),
+                                margin: EdgeInsets.symmetric(horizontal: 10),
                                 padding: EdgeInsets.only(left: 00),
                                 height: MediaQuery.of(context).size.height / 9.3,
                                 width: 115,

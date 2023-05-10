@@ -53,8 +53,8 @@ class SignIn extends GetWidget<sign_in_controller> {
       ),*/
       body: Container(
         decoration: BoxDecoration(
-         // borderRadius: BorderRadius.circular(60),
-        //  color: Colors.grey.shade200,
+          // borderRadius: BorderRadius.circular(60),
+          //  color: Colors.grey.shade200,
 
           gradient: LinearGradient(colors: [
             gradientColorA,
@@ -68,7 +68,7 @@ class SignIn extends GetWidget<sign_in_controller> {
         ),
         height: MediaQuery.of(context).size.height / 1.02,
         width: MediaQuery.of(context).size.height / 2,
-       /* decoration: BoxDecoration(
+        /* decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(60),
           color: Colors.grey.shade200,
         ),*/
@@ -95,11 +95,11 @@ class SignIn extends GetWidget<sign_in_controller> {
                   sigma: 4, // Default: 2
                 ),
                 Text('Welcome',
-                    style: TextStyle(
-                        color: Colors.white.withOpacity(0.9),
-                        fontSize: 48,
-                        fontWeight: FontWeight.bold,
-                    ),
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.9),
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
 
                 SizedBox(
@@ -144,7 +144,7 @@ class SignIn extends GetWidget<sign_in_controller> {
                   _formKey.currentState!.save();
                   if(_formKey.currentState!.validate()){
                     controller.signInWithEmailAndPassword(emailcontroller.text.trim(),passwordcontroller.text.trim());
-                    Get.offAll(()=>ControlView());
+
                   }
                 }),
                 SizedBox(

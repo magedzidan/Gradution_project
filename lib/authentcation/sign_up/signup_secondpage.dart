@@ -41,6 +41,12 @@ class SignupPage2 extends StatelessWidget {
             height: 18,
           ),
           Custom_textformfield(
+            isPasswordtype: false,
+            icon: Icons.house_sharp,
+            hintText: 'الكلية',
+            labelText: 'college',
+          ),
+          Custom_textformfield(
             icon: Icons.format_list_numbered,
             isPasswordtype: false,
             hintText: 'المستوي الدراسي',
